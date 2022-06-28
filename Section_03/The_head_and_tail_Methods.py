@@ -1,5 +1,6 @@
 import pandas as pd
-directory = "C:\\Users\\Tom\\iCloudDrive\\Nauka\\Python\\Pyton_files\\Data-Analysis-with-Pandas-and-Python\\Section_03\\"
+import secret as se
+
 # If you see a test failure when checking your solution,
 # note that [left] refers to YOUR code while [right]
 # refers to the correct code that the computer is comparing
@@ -12,7 +13,7 @@ directory = "C:\\Users\\Tom\\iCloudDrive\\Nauka\\Python\\Pyton_files\\Data-Analy
 # The Series should have the standard pandas numeric index
 # The Series values should be the string values from the "Name" column
 # Assign the Series object to a "coasters" variable
-coasters = pd.read_csv(directory + "roller_coasters.csv",
+coasters = pd.read_csv(se.SECREAT + "roller_coasters.csv",
                        usecols=["Name"]).squeeze("columns")
 
 

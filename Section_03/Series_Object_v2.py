@@ -1,5 +1,7 @@
 # Import the pandas library and assign it its "pd" alias
+
 import pandas as pd
+
 # Create a list with 4 countries - United States, France, Germany, Italy
 countries_list = ["United States", "France", "Germany", "Italy"]
 # Create a new Series by passing in the list of countries

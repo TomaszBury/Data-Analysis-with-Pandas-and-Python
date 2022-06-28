@@ -1,5 +1,6 @@
 import pandas as pd
-directory = "c:\\Users\\Tom\\iCloudDrive\\Nauka\Python\\Pyton_files\\Data-Analysis-with-Pandas-and-Python\\Section_03\\"
+import secret as se
+
 # If you see a test failure when checking your solution,
 # note that [left] refers to YOUR code while [right]
 # refers to the correct code that the computer is comparing
@@ -16,7 +17,7 @@ directory = "c:\\Users\\Tom\\iCloudDrive\\Nauka\Python\\Pyton_files\\Data-Analys
 # The Series values should be the string values from the "Winner" column
 # Assign the Series object to a "hot_dogs" variable
 
-hot_dogs = pd.read_csv(directory + "hot_dogs.csv",
+hot_dogs = pd.read_csv(se.SECREAT + "hot_dogs.csv",
                        usecols=["Winner"]).squeeze("columns")
 
 # I'm curious how many times each winner has won the hot dog-eating contest.

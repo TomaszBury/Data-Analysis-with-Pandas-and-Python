@@ -1,9 +1,10 @@
+import pandas as pd
+
 # If you see a test failure when checking your solution,
 # note that [left] refers to YOUR code while [right]
 # refers to the correct code that the computer is comparing
 # to your work
 
-import pandas as pd
 
 # Below, we have a list of delicious tortilla chip flavors
 flavors = ["Spicy Sweet Chili", "Cool Ranch", "Nacho Cheese", "Salsa Verde"]
