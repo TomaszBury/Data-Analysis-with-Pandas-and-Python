@@ -1,5 +1,5 @@
 import pandas as pd
-SEACREAT = "C:\\Users\\Tom\\iCloudDrive\\Nauka\\Python\\Pyton_files\\Data-Analysis-with-Pandas-and-Python\\Section_04\\"
+import secret as se
 
 # If you see a test failure when checking your solution,
 # note that [left] refers to YOUR code while [right]
@@ -12,7 +12,7 @@ SEACREAT = "C:\\Users\\Tom\\iCloudDrive\\Nauka\\Python\\Pyton_files\\Data-Analys
 # Import the cruise_ships.csv DataFrame and assign it to
 # a cruise_ships variable
 
-cruise_ships = pd.read_csv(SEACREAT + "cruise_ships.csv")
+cruise_ships = pd.read_csv(se.SECREAT + "cruise_ships.csv")
 
 # Extract the "Operator" column from the DataFrame
 # and assign it to an "operators" variable.
