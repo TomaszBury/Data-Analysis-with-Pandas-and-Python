@@ -2,6 +2,10 @@
 
 Data Analysis with Pandas and Python
 
+.dropna(how='all')
+.hasnans <-- bool value
+.astype(dtype='int')
+
 ## https://nordea.udemy.com/course/data-analysis-with-pandas/
 
 ### Test
