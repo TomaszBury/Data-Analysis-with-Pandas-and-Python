@@ -8,6 +8,10 @@ Data Analysis with Pandas and Python
 .nunique()
 .dtypes
 .info()
+.sort_values()
+.sort_values(by=['Team', 'Name'], ascending=[False,True])
+.value_counts(normalize=True)
+.fillna(0).astype('int')
 
 ## https://nordea.udemy.com/course/data-analysis-with-pandas/
 
