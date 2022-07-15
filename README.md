@@ -32,6 +32,14 @@
 
 .drop_duplicates(subset=['First Name'], keep = False)
 
+.reset_index()
+
+.set_index('Film')
+
+.loc['Casino Royale']
+
+.iloc[[15,20,0]]
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
