@@ -40,6 +40,24 @@
 
 .iloc[[15,20,0]]
 
+.str.replace('$','') .str.replace('Mgmnt', 'Management')
+
+.str.strip().str.title()
+
+.str.contains('water')
+
+.str.startswith('water')
+
+.str.endswith('ist')
+
+chicago['Name'].str.split(',').str.get(1).str.strip().str.strip().str.split(' ').str.get(0).str.title().value_counts().head(n=15)
+
+chicago['Position Title'].str.split(' ', expand=True, n=1)
+
+**bigmac.nunique()**
+
+bigmac.index.names
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
