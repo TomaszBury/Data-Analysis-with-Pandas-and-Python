@@ -58,6 +58,13 @@ chicago['Position Title'].str.split(' ', expand=True, n=1)
 
 bigmac.index.names
 
+import os
+cwd = os.getcwd() + '\\' + 'section_08\\'
+
+bigmac.index.get_level_values('Country')
+
+**bigmac.loc[(slice(None),'United States'),:]**
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
