@@ -56,7 +56,13 @@ chicago['Position Title'].str.split(' ', expand=True, n=1)
 
 **bigmac.nunique()**
 
+## 140
+
 bigmac.index.names
+
+bigmac.index = bigmac.index.set_names(names=['Day','Location'])
+
+world_stats.index = world_stats.index.set_names(names=['Country', 'Year'])
 
 import os
 cwd = os.getcwd() + '\\' + 'section_08\\'
@@ -64,6 +70,31 @@ cwd = os.getcwd() + '\\' + 'section_08\\'
 bigmac.index.get_level_values('Country')
 
 **bigmac.loc[(slice(None),'United States'),:]**
+
+## 141
+bigmac.sort_index(level=1, ascending=False)
+
+## 146
+world_stats.stack().to_frame()
+
+## 147
+
+world_stats.unstack().unstack().unstack().to_frame()
+
+## 148
+
+world_statistics_stacked.unstack(-3)
+
+world_statistics_stacked.unstack('country')
+
+## 149
+
+world_statistics.unstack(level=['year', 'country'])
+
+world_statistics.unstack(level=[1,0])
+
+world_statistics.unstack('year', fill_value=0)
+
 
 ## Filtering DataFrame
 
