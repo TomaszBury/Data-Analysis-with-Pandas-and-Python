@@ -95,6 +95,18 @@ world_statistics.unstack(level=[1,0])
 
 world_statistics.unstack('year', fill_value=0)
 
+## 150
+
+salesmen = salesmen.pivot(index='Date', columns='Salesman', values='Revenue')
+
+## 151
+
+foods = foods.pivot_table(values='Spend', index=['Gender', 'Item'], columns=['Frequency', 'City'], aggfunc='mean')
+pd.pivot_table(**data=foods**, values='Spend',index='City', aggfunc='max')
+
+## 152
+
+sales = pd.melt(sales, id_vars='Salesman', var_name='Quarter', value_name='Revenue')
 
 ## Filtering DataFrame
 
