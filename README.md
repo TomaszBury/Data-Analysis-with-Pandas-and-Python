@@ -108,6 +108,25 @@ pd.pivot_table(**data=foods**, values='Spend',index='City', aggfunc='max')
 
 sales = pd.melt(sales, id_vars='Salesman', var_name='Quarter', value_name='Revenue')
 
+## 156
+
+sectors = fortune.groupby('Sector')
+len(sectors)
+sectors.groups
+sectors.size()
+sectors.first()
+sectors.last()
+sectors.get_group('Apparel')
+
+## 159
+
+sectors.agg({'Profits': 'sum',
+                'Employees':'mean'})
+sectors.agg(['size', 'sum', 'min'])
+sectors.agg({'Revenue': ['sum','mean'],
+            'Profits': 'sum',
+            'Employees': 'mean'})
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
