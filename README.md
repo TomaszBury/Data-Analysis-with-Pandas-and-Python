@@ -132,6 +132,40 @@ sectors.agg({'Revenue': ['sum','mean'],
 sales = pd.concat(objs=[week_1, week_2], keys=['week_1', 'week_2'])
 sales.loc[('week_1', 240), 'Customer ID']
 
+## 164
+
+week_1.merge(week_2, how='inner', on='Customer ID', suffixes=[' - A', ' - B'])
+
+## 166 
+
+week_1.merge(week_2, how='outer', on='Customer ID')
+
+week_1.merge(week_2, how='outer', on='Customer ID', suffixes=[' - Week 1', '  -  Week 2'])
+
+week_1.merge(week_2, how='outer', on='Customer ID', suffixes=[' - Week 1', ' - Week 2'], indicator=True)
+
+**Full outer join:**
+
+mask_merge = merged_work_week['_merge'].isin(['left_only', 'right_only'])
+
+merged_work_week[mask_merge]
+
+## 167 
+
+week_1.merge(foods, how='left', on='Food ID')
+
+week_1.merge(foods, how='left', on='Food ID', sort=True)
+
+## 168
+
+week_2.merge(customers, how='left', left_on='Customer ID', right_on='ID')
+
+week_2.merge(customers, how='left', left_on='Customer ID', right_on='ID').drop('ID', axis='columns')
+
+## 171
+
+pd.merge(left=week_1, right=customers, how='left', left_on='Customer ID', right_on='ID')
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
