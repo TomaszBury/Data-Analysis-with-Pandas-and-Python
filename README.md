@@ -127,6 +127,11 @@ sectors.agg({'Revenue': ['sum','mean'],
             'Profits': 'sum',
             'Employees': 'mean'})
 
+## 163
+
+sales = pd.concat(objs=[week_1, week_2], keys=['week_1', 'week_2'])
+sales.loc[('week_1', 240), 'Customer ID']
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
