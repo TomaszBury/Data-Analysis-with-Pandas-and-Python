@@ -176,6 +176,48 @@ pd.to_datetime(times)
 pd.to_datetime(tates, **errors='coerce'**)
 pd.to_datetime(unix_times, unit='s')
 
+## 178
+
+pd.date_range(start='2062-01-04',periods=56,freq='A')
+
+## 179
+
+pd.date_range(end='1999-12-31', periods=40, freq='W-SUN')
+
+## 183
+
+import pandas_datareader as data
+stocks = data.DataReader(name='MSFT', data_source='yahoo', start='2010-01-01', end='2022-12-13')
+
+dates = pd.date_range(start='1900-04-12',end='07-30-2022',freq='Y')
+
+dates = pd.date_range(start='1900-04-12',end='07-30-2022',freq=pd.DateOffset(years=1))
+
+## 185
+
+stocks.index  - pd.DateOffset(days=5)
+
+stocks.index + pd.DateOffset(weeks = 2)
+
+stocks.index + pd.DateOffset(months = 2)
+
+stocks.index + pd.DateOffset(months = 2, years=3, days=10, hours=6, minutes=2)
+
+stocks.index - pd.DateOffset(months = 2, years=3, days=10, hours=6, minutes=2, seconds=26)
+
+## 187
+
+pd.Timedelta(weeks=8, days=3, hours=12, minutes=45, seconds=20)
+
+pd.Timedelta('6 hours 12 min')
+
+pd.Timedelta('40 days 6 hours 12 min 49 sec')
+
+## 188
+
+mask = shipping['Delivery Time'] > '365 days'
+shipping[mask]
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
