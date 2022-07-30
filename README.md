@@ -166,6 +166,16 @@ week_2.merge(customers, how='left', left_on='Customer ID', right_on='ID').drop('
 
 pd.merge(left=week_1, right=customers, how='left', left_on='Customer ID', right_on='ID')
 
+## 176
+
+pd.to_datetime(['2015-01-03','2014-02-08','2022 2 22','July 4th, 1996','2020','2199-01','2200','2262'])
+
+times = pd.Series(['2022-12-31','2023-01-01','2024,06,06'])
+
+pd.to_datetime(times)
+pd.to_datetime(tates, **errors='coerce'**)
+pd.to_datetime(unix_times, unit='s')
+
 ## Filtering DataFrame
 
 mask = df['Team] == 'Finance
