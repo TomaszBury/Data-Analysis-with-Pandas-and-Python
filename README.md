@@ -1,5 +1,9 @@
 # Data Analysis with Pandas and Python
 
+## pip install pandas_datareader
+## pip install xlrd
+## pip install openpyxl
+
 .dropna(how='all')
 
 .hasnans <-- bool value
@@ -65,6 +69,7 @@ bigmac.index = bigmac.index.set_names(names=['Day','Location'])
 world_stats.index = world_stats.index.set_names(names=['Country', 'Year'])
 
 import os
+
 cwd = os.getcwd() + '\\' + 'section_08\\'
 
 bigmac.index.get_level_values('Country')
@@ -102,6 +107,7 @@ salesmen = salesmen.pivot(index='Date', columns='Salesman', values='Revenue')
 ## 151
 
 foods = foods.pivot_table(values='Spend', index=['Gender', 'Item'], columns=['Frequency', 'City'], aggfunc='mean')
+
 pd.pivot_table(**data=foods**, values='Spend',index='City', aggfunc='max')
 
 ## 152
@@ -111,25 +117,31 @@ sales = pd.melt(sales, id_vars='Salesman', var_name='Quarter', value_name='Reven
 ## 156
 
 sectors = fortune.groupby('Sector')
+
 len(sectors)
+
 sectors.groups
+
 sectors.size()
+
 sectors.first()
+
 sectors.last()
+
 sectors.get_group('Apparel')
 
 ## 159
 
-sectors.agg({'Profits': 'sum',
-                'Employees':'mean'})
+sectors.agg({'Profits': 'sum', 'Employees':'mean'})
+
 sectors.agg(['size', 'sum', 'min'])
-sectors.agg({'Revenue': ['sum','mean'],
-            'Profits': 'sum',
-            'Employees': 'mean'})
+
+sectors.agg({'Revenue': ['sum','mean'], 'Profits': 'sum', 'Employees': 'mean'})
 
 ## 163
 
 sales = pd.concat(objs=[week_1, week_2], keys=['week_1', 'week_2'])
+
 sales.loc[('week_1', 240), 'Customer ID']
 
 ## 164
@@ -173,7 +185,9 @@ pd.to_datetime(['2015-01-03','2014-02-08','2022 2 22','July 4th, 1996','2020','2
 times = pd.Series(['2022-12-31','2023-01-01','2024,06,06'])
 
 pd.to_datetime(times)
+
 pd.to_datetime(tates, **errors='coerce'**)
+
 pd.to_datetime(unix_times, unit='s')
 
 ## 178
@@ -187,6 +201,7 @@ pd.date_range(end='1999-12-31', periods=40, freq='W-SUN')
 ## 183
 
 import pandas_datareader as data
+
 stocks = data.DataReader(name='MSFT', data_source='yahoo', start='2010-01-01', end='2022-12-13')
 
 dates = pd.date_range(start='1900-04-12',end='07-30-2022',freq='Y')
@@ -216,7 +231,29 @@ pd.Timedelta('40 days 6 hours 12 min 49 sec')
 ## 188
 
 mask = shipping['Delivery Time'] > '365 days'
+
 shipping[mask]
+
+## 191
+
+url='https://data.cityofnewyork.us/api/views/25th-nujf/rows.csv'
+
+baby_names = pd.read_csv(url)
+
+## 192
+
+baby_names.to_csv('NYC_Baby_Names.csv',index=False)
+
+baby_names.to_csv('NYC_Baby_Names.csv',index=False,columns=['Gender','Ethnicity',"Child's First Name"], encoding='utf-8')
+
+## 194
+
+pd.read_excel('Data - Multiple Worksheets.xlsx', sheet_name=1)
+
+pd.read_excel("Data - Multiple Worksheets.xlsx", sheet_name=['Data 1', 'Data 2'])
+
+data = pd.read_excel("Data - Multiple Worksheets.xlsx", sheet_name=None) None == All
+
 
 ## Filtering DataFrame
 
