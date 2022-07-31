@@ -3,7 +3,6 @@
 ## pip install pandas_datareader
 ## pip install xlrd
 ## pip install openpyxl
-## pip install matplotlib %matplotlib inline
 
 .dropna(how='all')
 
@@ -254,12 +253,6 @@ pd.read_excel('Data - Multiple Worksheets.xlsx', sheet_name=1)
 pd.read_excel("Data - Multiple Worksheets.xlsx", sheet_name=['Data 1', 'Data 2'])
 
 data = pd.read_excel("Data - Multiple Worksheets.xlsx", sheet_name=None) None == All
-
-## 198
-
-plt.style.available
-
-plt.style.use('seaborn-poster')
 
 
 ## Filtering DataFrame
